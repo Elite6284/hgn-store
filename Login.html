@@ -337,7 +337,7 @@
                 password: password.value
             }
 
-            const response = await fetch("http://localhost:3001/user/get", {
+            const response = await fetch("https://hgn-store.onrender.com/user/get", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -350,7 +350,7 @@
                 window.location.href = "/home";
 
             } else {
-                alert("Error while Loging In")
+                alert("Error while Logging In")
                 window.location.reload()
             }
         }
