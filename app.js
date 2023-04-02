@@ -32,12 +32,10 @@ app.get("/", (req, res) => {
 })
 
 app.get("/login", (req, res) => {
-    res.clearCookie("Auth");
     res.sendFile(path.join(__dirname, './Login.html'))
 })
 
 app.get("/register", (req, res) => {
-    res.clearCookie("Auth");
     res.sendFile(path.join(__dirname, './Register.html'))
 })
 
