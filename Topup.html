@@ -11304,7 +11304,7 @@
     <div class="topbar">
 
         <div class="topbar-left">
-            <a href="https://t.me/hgn01_official" class="logo">
+            <a href="https://t.me/HGN012" class="logo">
                 <span>
                     <img src="public/HGN%20-%20Topup_files/logogif.gif" alt="logo-small" class="logo-sm">
                 </span>
@@ -11381,10 +11381,10 @@
                         <ul class="nav metismenu" id="main_menu_side_nav">
                             <li class="nav-item"><a class="nav-link" href="/home"><i
                                         class="dripicons-meter"></i>Dashboard</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#"><i
+                            <li class="nav-item"><a class="nav-link" href="/store"><i
                                         class="dripicons-document-edit"></i>Become Vendor</a></li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="dripicons-time-reverse"></i><span
+                                <a class="nav-link" href="/store"><i class="dripicons-time-reverse"></i><span
                                         class="w-100">Order History</span><span class="menu-arrow"><i
                                             class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="nav-second-level mm-collapse" aria-expanded="false">
@@ -11397,7 +11397,7 @@
                                         class="dripicons-conversation"></i>Manage Bid</a></li>
                             <li class="nav-item"><a class="nav-link" href="#"><i class="dripicons-question"></i>FAQs</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="./topup"><i class="dripicons-warning"></i>Bug
+                            <li class="nav-item"><a class="nav-link" href="/topup"><i class="dripicons-warning"></i>Bug
                                     Report</a></li>
                             <hr>
                             <div class="title-box">
@@ -11407,7 +11407,7 @@
                                         class="dripicons-suitcase"></i>Bank Logs</a></li>
                             <li class="nav-item"><a class="nav-link" href="/topup"><i
                                         class="dripicons-card"></i>Card</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./topup"><i class="dripicons-card"></i>Card
+                            <li class="nav-item"><a class="nav-link" href="/topup"><i class="dripicons-card"></i>Card
                                     WITH PIN</a></li>
                         </ul>
                     </div>
@@ -11439,7 +11439,6 @@
                         <span aria-hidden="true"><i class="mdi mdi-close text-danger"></i></span>
                     </button>
                 </div>
-
                 <div class="container-fluid">
 
                     <div class="row">
@@ -11487,7 +11486,7 @@
                 <footer class="footer text-center text-sm-center">
 
                     <span class="">© 2022 Made with <i class="mdi mdi-heart text-danger"></i> by <a
-                            href="https://t.me/hgn01_official" style="color:#20fc03;">HGN TEAM</a></span>
+                            href="https://t.me/HGN012" style="color:#20fc03;">HGN TEAM</a></span>
                 </footer>
 
 
@@ -11579,7 +11578,7 @@
                     allowOutsideClick: () => !Swal.isLoading()
                 }).then((result) => {
                     if (result.value.status) {
-                        window.location.href = "/invoice_topup.php" + result.value.order_id;
+                        window.location.href = "/store" + result.value.order_id;
                     } else {
                         Swal.fire({
                             title: result.value.title,
