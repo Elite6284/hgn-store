@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Register - HGN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A premium admin dashboard template by Mannatthemes" name="description">
+    <meta content="Mannatthemes" name="author">
+
+    <link rel="shortcut icon" href="public/favicon.ico">
+    <link href="public/Register%20-%20HGN_files/sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/animate.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/icons.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/metisMenu.min.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/style.css" rel="stylesheet" type="text/css">
+    <script src="public/Register%20-%20HGN_files/0f0c801056.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="account-body accountbg">
+    <div class="row vh-100 ">
+        <div class="col-lg-12  pr-0 align-self-center">
+            <div class="row">
+                <div class="col-lg-3 mx-auto">
+                    <div class="card auth-card shadow-lg" style="margin-top:40px;">
+                        <div class="card-body">
+                            <div class="px-3">
+                                <div class="auth-logo-box">
+                                    <a href="/home" class="logo logo-admin"><img
+                                            src="public/Register%20-%20HGN_files/logo-sm.png" alt="logo"
+                                            class="auth-logo" height="55"></a>
+                                </div>
+                                <div class="text-center auth-logo-text">
+                                    <h4 class="mt-0 mb-3 mt-5">Register</h4>
+                                    <p class="text-muted mb-0">Register for our best product and services.</p>
+                                </div>
+                                <form class="form-horizontal auth-form my-4" type="submit" method="post">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-user"></i>
+                                            </span>
+                                            <input required="" name="username" type="text" class="form-control"
+                                                id="username" placeholder="Enter username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="useremail">Email</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-envelope"></i>
+                                            </span>
+                                            <input required="" name="email" type="email" class="form-control" id="email"
+                                                placeholder="Enter Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="userpassword">Password</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-lock"></i>
+                                            </span>
+                                            <input required="" name="password" type="password" class="form-control"
+                                                id="password" placeholder="Enter password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usertelegram">Telegram</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-lock"></i>
+                                            </span>
+                                            <input name="telegram" type="text" class="form-control" id="telegram"
+                                                placeholder="Telegram Username (Optional)">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="h-captcha" data-sitekey="82e115df-edda-403c-a369-3a2c6b788bd0">
+                                                <iframe src="public/Register%20-%20HGN_files/hcaptcha.html" tabindex="0"
+                                                    scrolling="no"
+                                                    title="Widget containing checkbox for hCaptcha security challenge"
+                                                    data-hcaptcha-widget-id="01uqgk2rrkb8" data-hcaptcha-response=""
+                                                    style="width: 303px; height: 78px; overflow: hidden;"
+                                                    frameborder="0"></iframe><textarea
+                                                    id="g-recaptcha-response-01uqgk2rrkb8" name="g-recaptcha-response"
+                                                    style="display: none;"></textarea><textarea
+                                                    id="h-captcha-response-01uqgk2rrkb8" name="h-captcha-response"
+                                                    style="display: none;"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0 row">
+                                        <div class="col-12 mt-2">
+                                            <button id="submit"
+                                                class="btn btn-primary btn-round btn-block waves-effect waves-light"
+                                                type="submit">Register <i class="fas fa-sign-in-alt ml-1"
+                                                    aria-hidden="true"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="m-3 text-center text-muted">
+                                <p class="">Already have an account ? <a href="/login" class="text-primary ml-2">Log
+                                        in</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const submit = document.getElementById("submit")
+
+        async function register(e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+            const telegram = document.getElementById("telegram").value;
+
+            const data = {
+                username: username,
+                password: password,
+                email: email,
+                telegram: telegram
+            }
+
+            const response = await fetch("http://localhost:3001/user/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            if (result.Auth === "Success") {
+                window.location.href = "/login";
+
+            } else {
+                alert("Error while Registering")
+                window.location.reload()
+            }
+
+        }
+        submit.addEventListener("click", register)
+
+    </script>
+
+    <script src="public/Register%20-%20HGN_files/app.js"></script>
+
+    <div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: auto; top: -10000px; z-index: -2147483648; position: absolute; transition: opacity 0.15s ease-out 0s; opacity: 0; visibility: hidden;"
+        aria-hidden="true">
+        <div style="position: relative; z-index: 1;"><iframe src="public/Register%20-%20HGN_files/hcaptcha_002.html"
+                scrolling="no" title="Main content of the hCaptcha challenge"
+                style="border: 0px none; z-index: 2000000000; position: relative;" frameborder="0"></iframe></div>
+        <div
+            style="width: 100%; height: 100%; position: fixed; pointer-events: none; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05;">
+        </div>
+        <div
+            style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%;">
+            <div
+                style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1;">
+            </div>
+            <div
+                style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0;">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

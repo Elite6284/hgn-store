@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login - HGN</title>
+
+    <meta name="description"
+        content=" HGN01 RU. WELCOME TO HGN01 RU CC SHOP. THE BEST FOR QUALITY CVV. FOR HGN01 RU, HGN01 SU AND HGN01 STORE - USE THIS PAGE FOR HGN01 RU, HGN01 ONION LINK AND NEW DOMAIN. HGN01 REDDIT AND HGN01 REVIEWS.  ">
+    <meta name="keywords"
+        content=" hgn01, hgn01.ru, hgn01 ru, hgn01.store, hgn01 cc, hgn01 cvv, hgn01 login, hgn01 register, hgn01 new domain, hgn01 shop, hgn 01, hgn 01 ru, hgn01 reviews, hgn01 reddit, hgn01.ru reddit, hgn01.ru reviews.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="public/favicon.ico">
+
+    <link href="public/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <link href="public/css/animate.css" rel="stylesheet" type="text/css">
+
+    <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="public/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="public/css/metisMenu.min.css" rel="stylesheet" type="text/css">
+    <link href="public/css/style.css" rel="stylesheet" type="text/css">
+    <script src="public/js/api.js" async defer></script>
+    <style>
+        canvas {
+            position: absolute;
+            left: 0;
+        }
+
+        .plate {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            text-align: center;
+            color: white;
+            letter-spacing: 4px;
+            font-size: 0.6em;
+            line-height: 2.5;
+        }
+
+        a {
+            text-underline: none;
+            -webkit-appearance: none;
+        }
+
+        .social {
+            padding-top: 1rem;
+
+            svg {
+                height: 1.25rem;
+                margin: 0 0.5rem;
+                fill: rgba(255, 255, 255, 0.3);
+                transition: all 0.2s ease;
+
+                &:hover {
+                    fill: white;
+                }
+            }
+
+            a {
+                vertical-align: middle;
+                display: inline-block;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.7s ease 0.15s;
+            }
+
+            &__twitter {
+                transform: translateX(-10px);
+            }
+
+            &__codepen {
+                transform: translateX(10px);
+            }
+
+            &.active {
+                opacity: 1;
+
+                a {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: none;
+                }
+            }
+        }
+
+        .mouse {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            padding: 1rem 0;
+            z-index: 2;
+            color: rgba(255, 255, 255, 0.3);
+            width: 100%;
+            letter-spacing: 6px;
+            font-size: 0.45em;
+            line-height: 2.5;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(-15px);
+
+            &.active {
+                transform: none;
+                opacity: 1;
+            }
+        }
+
+        .text-animation {
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
+
+            .letter {
+                opacity: 0;
+                transition: color 0.5s ease, opacity 0.3s ease;
+                transform-origin: bottom;
+                color: white;
+
+                &.active {
+                    color: rgba(255, 255, 255, 0.3);
+                    opacity: 1;
+                    transform: none;
+                    animation: color 5s ease infinite 3s;
+                }
+            }
+        }
+
+        @keyframes color {
+            0% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            20% {
+                color: rgba(255, 255, 255, 0.3);
+            }
+
+            100% {
+                color: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        #logo {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        body {
+            color: #54FE55;
+        }
+
+        *::selection {
+            background: #1a4f1a;
+        }
+
+        .welcome .line {
+            overflow: hidden;
+            width: 0px;
+            text-shadow: 0px 0px 10px #54FE55;
+            height: 1rem;
+            text-align: left;
+        }
+
+        .welcome .line1 {
+            animation: type 0.5s 1s steps(20, end) forwards;
+        }
+
+        .welcome .line2 {
+            animation: type 0.5s 1.5s steps(20, end) forwards;
+        }
+
+        .welcome .line3 {
+            animation: type 0.5s 2s steps(20, end) forwards;
+        }
+
+        @keyframes type {
+            to {
+                width: 280px;
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            49% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .blink {
+            animation-name: blink;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        form input {
+            background: black;
+            border: 1px solid #54FE55;
+            padding: .5rem;
+            color: #54FE55;
+            text-shadow: 0px 0px 10px #54FE55;
+            box-shadow: 0px 0px 5px #54FE55;
+        }
+
+        form input:focus {
+            outline: none;
+        }
+
+        form button {
+            background: #1a4f1a;
+            color: #54FE55;
+            border: 0;
+            text-shadow: 0px 0px 10px #54FE55;
+            box-shadow: 0px 0px 10px #1a4f1a;
+            cursor: pointer;
+        }
+
+        form button:focus {
+            outline: none;
+        }
+    </style>
+
+    <script src="public/js/0f0c801056.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="account-body accountbg">
+    <canvas class="plane-canvas" id="plane-canvas"></canvas>
+    <canvas class="main-canvas" id="main-canvas"></canvas>
+    <div id="chartdiv"></div>
+    <div id="chartdivs"></div>
+
+    <div class="row vh-100 ">
+        <div class="col-lg-12  pr-0 align-self-center" style="top:65px">
+            <div class="row">
+                <div class="col-lg-3 mx-auto">
+                    <div class="card auth-card shadow-lg" style="background: transparent;">
+                        <div class="card-body">
+                            <div class="px-3">
+                                <form autocomplete="off" class="form-horizontal auth-form my-4" method="post">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon" style="background-color: black">
+                                                <i class="dripicons-user"></i>
+                                            </span>
+                                            <input autocomplete="off" style="background-color: black" type="text"
+                                                name="username" class="form-control" id="username"
+                                                placeholder="Enter username">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon" style="background-color: black">
+                                                <i class="dripicons-lock"></i>
+                                            </span>
+                                            <input autocomplete="off" style="background-color: black" type="password"
+                                                name="password" class="form-control" id="password"
+                                                placeholder="Enter password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt-4">
+                                        <div class="col-sm-6">
+                                            <div class="custom-control custom-switch switch-success">
+                                                <input type="checkbox" class="custom-control-input"
+                                                    id="customSwitchSuccess">
+                                                <label class="custom-control-label text-muted"
+                                                    for="customSwitchSuccess">Remember me</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            <a href="javascript:void();" class="text-muted font-13"><i
+                                                    class="dripicons-lock"></i> Forgot password?</a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="h-captcha" data-sitekey="82e115df-edda-403c-a369-3a2c6b788bd0">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group mb-0 row">
+                                        <div class="col-12 mt-2">
+                                            <button id="submit" type="submit"
+                                                style="background: #1a4f1a;text-shadow: 0px 0px 10px #54FE55;box-shadow: 0px 0px 10px #c0f060;"
+                                                class="btn btn-secondary btn-round btn-block">Log In <i
+                                                    class="fas fa-sign-in-alt ml-1"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="m-3 text-center text-muted">
+                                <p class>Don't have an account ? <a href="/register"
+                                        class="text-success ml-3">Register</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="public/js/mouse.js"></script>
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.bundle.min.js"></script>
+    <script src="public/js/metisMenu.min.js"></script>
+    <script src="public/js/waves.min.js"></script>
+    <script src="public/js/jquery.slimscroll.min.js"></script>
+
+    <script src="public/js/sweetalert2.min.js"></script>
+    <script>
+
+        const submit = document.getElementById("submit")
+        const fetchFunction = async (e) => {
+            e.preventDefault();
+            const username = document.getElementById("username")
+            const password = document.getElementById("password")
+
+            const data = {
+                username: username.value,
+                password: password.value
+            }
+
+            const response = await fetch("http://localhost:3001/user/get", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            console.log(result)
+            if (result.Auth === "Success") {
+                window.location.href = "/home";
+
+            } else {
+                alert("Error while Loging In")
+                window.location.reload()
+            }
+        }
+        submit.addEventListener("click", fetchFunction)
+    </script>
+
+    <script src="public/js/app.js"></script>
+</body>
+
+</html>
