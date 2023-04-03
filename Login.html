@@ -332,24 +332,30 @@
             const username = document.getElementById("username")
             const password = document.getElementById("password")
 
-            const data = {
-                username: username.value,
-                password: password.value
-            }
+            if (username && password) {
+                const data = {
+                    username: username.value,
+                    password: password.value
+                }
 
-            const response = await fetch("https://hgn-store.onrender.com/user/get", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-            const result = await response.json();
-            if (result.Auth === "Success") {
-                window.location.href = "/home";
+                const response = await fetch("https://hgn-store.onrender.com/user/get", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                });
+                const result = await response.json();
+                console.log(result)
+                if (result.Auth === "Success") {
+                    window.location.href = "/home";
 
+                } else {
+                    alert("Username or password Incorrect")
+                    window.location.reload()
+                }
             } else {
-                alert("Username or Password Incorrect!")
+                alert("Enter Username and password!")
                 window.location.reload()
             }
         }
