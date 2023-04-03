@@ -21,8 +21,7 @@ const getUser = async (req, res) => {
             }
             res.cookie('Auth', 'True', options)
             return res.json({
-                Auth: "Success",
-                user: doc
+                Auth: "Success"
             });
         } else {
             res.json({
