@@ -49,13 +49,6 @@ const createUser = async (req, res) => {
     });
     try {
         await newUser.save()
-
-        let options = {
-            maxAge: 1000 * 60 * 15, // would expire after 15 minutes
-            httpOnly: true, // The cookie only accessible by the web server
-        }
-
-        res.cookie('Auth', 'True', options)
         res.json({ Auth: "Success" })
     } catch (error) {
         res.json({ Auth: "Failure" })
