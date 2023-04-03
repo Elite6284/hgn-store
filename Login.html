@@ -345,12 +345,11 @@
                 body: JSON.stringify(data),
             });
             const result = await response.json();
-            console.log(result)
             if (result.Auth === "Success") {
                 window.location.href = "/home";
 
             } else {
-                alert("Error while Logging In")
+                alert("Username or Password Incorrect!")
                 window.location.reload()
             }
         }
