@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 3001
 app.use(express.json())
 app.use('/public', express.static(path.join(__dirname, "./public")));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:3001'
+}));
 
 mongoose
     .connect(process.env.DB_URL, {
@@ -46,16 +48,13 @@ app.get("/home", (req, res) => {
     } else {
         res.redirect("/login")
     }
+    // res.sendFile(path.join(__dirname, './Dashboard.html'))
 
 })
 
 app.get("/topup", (req, res) => {
-    const { Auth } = req.cookies
-    if (Auth) {
-        res.sendFile(path.join(__dirname, './Topup.html'))
-    } else {
-        res.redirect("/login")
-    }
+    res.sendFile(path.join(__dirname, './Topup.html'))
+
 })
 
 app.get("/store", (req, res) => {
@@ -65,7 +64,20 @@ app.get("/store", (req, res) => {
     } else {
         res.redirect("/login")
     }
+    // res.sendFile(path.join(__dirname, './Dashboard.html'))
 })
+
+app.get("/invoice", (req, res) => {
+    const { Auth } = req.cookies
+    if (Auth) {
+        res.sendFile(path.join(__dirname, './Invoice.html'))
+    } else {
+        res.redirect("/login")
+    }
+    // res.sendFile(path.join(__dirname, './Invoice.html'))
+})
+
+
 
 app.post("/user/create", createUser);
 app.post("/user/get", getUser);
