@@ -2,290 +2,80 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Login - HGN</title>
-
-    <meta name="description"
-        content=" HGN01 RU. WELCOME TO HGN01 RU CC SHOP. THE BEST FOR QUALITY CVV. FOR HGN01 RU, HGN01 SU AND HGN01 STORE - USE THIS PAGE FOR HGN01 RU, HGN01 ONION LINK AND NEW DOMAIN. HGN01 REDDIT AND HGN01 REVIEWS.  ">
-    <meta name="keywords"
-        content=" hgn01, hgn01.ru, hgn01 ru, hgn01.store, hgn01 cc, hgn01 cvv, hgn01 login, hgn01 register, hgn01 new domain, hgn01 shop, hgn 01, hgn 01 ru, hgn01 reviews, hgn01 reddit, hgn01.ru reddit, hgn01.ru reviews.">
-
+    <title>Register - HGN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A premium admin dashboard template by Mannatthemes" name="description">
+    <meta content="Mannatthemes" name="author">
 
     <link rel="shortcut icon" href="public/favicon.ico">
-
-    <link href="public/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
-    <link href="public/css/animate.css" rel="stylesheet" type="text/css">
-
-    <link href="public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="public/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="public/css/metisMenu.min.css" rel="stylesheet" type="text/css">
-    <link href="public/css/style.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/animate.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/icons.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/metisMenu.min.css" rel="stylesheet" type="text/css">
+    <link href="public/Register%20-%20HGN_files/style.css" rel="stylesheet" type="text/css">
+    <script src="public/Register%20-%20HGN_files/0f0c801056.js" crossorigin="anonymous"></script>
     <script src="public/js/api.js" async defer></script>
-    <style>
-        canvas {
-            position: absolute;
-            left: 0;
-        }
-
-        .plate {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1rem 0;
-            text-align: center;
-            color: white;
-            letter-spacing: 4px;
-            font-size: 0.6em;
-            line-height: 2.5;
-        }
-
-        a {
-            text-underline: none;
-            -webkit-appearance: none;
-        }
-
-        .social {
-            padding-top: 1rem;
-
-            svg {
-                height: 1.25rem;
-                margin: 0 0.5rem;
-                fill: rgba(255, 255, 255, 0.3);
-                transition: all 0.2s ease;
-
-                &:hover {
-                    fill: white;
-                }
-            }
-
-            a {
-                vertical-align: middle;
-                display: inline-block;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.7s ease 0.15s;
-            }
-
-            &__twitter {
-                transform: translateX(-10px);
-            }
-
-            &__codepen {
-                transform: translateX(10px);
-            }
-
-            &.active {
-                opacity: 1;
-
-                a {
-                    opacity: 1;
-                    visibility: visible;
-                    transform: none;
-                }
-            }
-        }
-
-        .mouse {
-            position: absolute;
-            top: 0;
-            left: 0;
-            text-align: center;
-            padding: 1rem 0;
-            z-index: 2;
-            color: rgba(255, 255, 255, 0.3);
-            width: 100%;
-            letter-spacing: 6px;
-            font-size: 0.45em;
-            line-height: 2.5;
-            text-transform: uppercase;
-            transition: all 0.5s ease;
-            opacity: 0;
-            transform: translateY(-15px);
-
-            &.active {
-                transform: none;
-                opacity: 1;
-            }
-        }
-
-        .text-animation {
-            opacity: 0;
-
-            &.active {
-                opacity: 1;
-            }
-
-            .letter {
-                opacity: 0;
-                transition: color 0.5s ease, opacity 0.3s ease;
-                transform-origin: bottom;
-                color: white;
-
-                &.active {
-                    color: rgba(255, 255, 255, 0.3);
-                    opacity: 1;
-                    transform: none;
-                    animation: color 5s ease infinite 3s;
-                }
-            }
-        }
-
-        @keyframes color {
-            0% {
-                color: rgba(255, 255, 255, 1);
-            }
-
-            20% {
-                color: rgba(255, 255, 255, 0.3);
-            }
-
-            100% {
-                color: rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        #logo {
-            position: absolute;
-            right: 0px;
-            bottom: 0px;
-        }
-
-        body {
-            color: #54FE55;
-        }
-
-        *::selection {
-            background: #1a4f1a;
-        }
-
-        .welcome .line {
-            overflow: hidden;
-            width: 0px;
-            text-shadow: 0px 0px 10px #54FE55;
-            height: 1rem;
-            text-align: left;
-        }
-
-        .welcome .line1 {
-            animation: type 0.5s 1s steps(20, end) forwards;
-        }
-
-        .welcome .line2 {
-            animation: type 0.5s 1.5s steps(20, end) forwards;
-        }
-
-        .welcome .line3 {
-            animation: type 0.5s 2s steps(20, end) forwards;
-        }
-
-        @keyframes type {
-            to {
-                width: 280px;
-            }
-        }
-
-        @keyframes blink {
-            0% {
-                opacity: 0;
-            }
-
-            49% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .blink {
-            animation-name: blink;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-        }
-
-        form input {
-            background: black;
-            border: 1px solid #54FE55;
-            padding: .5rem;
-            color: #54FE55;
-            text-shadow: 0px 0px 10px #54FE55;
-            box-shadow: 0px 0px 5px #54FE55;
-        }
-
-        form input:focus {
-            outline: none;
-        }
-
-        form button {
-            background: #1a4f1a;
-            color: #54FE55;
-            border: 0;
-            text-shadow: 0px 0px 10px #54FE55;
-            box-shadow: 0px 0px 10px #1a4f1a;
-            cursor: pointer;
-        }
-
-        form button:focus {
-            outline: none;
-        }
-    </style>
-
-    <script src="public/js/0f0c801056.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="account-body accountbg">
-    <canvas class="plane-canvas" id="plane-canvas"></canvas>
-    <canvas class="main-canvas" id="main-canvas"></canvas>
-    <div id="chartdiv"></div>
-    <div id="chartdivs"></div>
-
     <div class="row vh-100 ">
-        <div class="col-lg-12  pr-0 align-self-center" style="top:65px">
+        <div class="col-lg-12  pr-0 align-self-center">
             <div class="row">
                 <div class="col-lg-3 mx-auto">
-                    <div class="card auth-card shadow-lg" style="background: transparent;">
+                    <div class="card auth-card shadow-lg" style="margin-top:40px;">
                         <div class="card-body">
                             <div class="px-3">
-                                <form autocomplete="off" class="form-horizontal auth-form my-4" method="post">
+                                <div class="auth-logo-box">
+                                    <a href="/home" class="logo logo-admin"><img
+                                            src="public/Register%20-%20HGN_files/logo-sm.png" alt="logo"
+                                            class="auth-logo" height="55"></a>
+                                </div>
+                                <div class="text-center auth-logo-text">
+                                    <h4 class="mt-0 mb-3 mt-5">Register</h4>
+                                    <p class="text-muted mb-0">Register for our best product and services.</p>
+                                </div>
+                                <form class="form-horizontal auth-form my-4" type="submit" method="post">
                                     <div class="form-group">
+                                        <label for="username">Username</label>
                                         <div class="input-group mb-3">
-                                            <span class="auth-form-icon" style="background-color: black">
-                                                <i class="dripicons-user"></i>
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-user"></i>
                                             </span>
-                                            <input autocomplete="off" style="background-color: black" type="text"
-                                                name="username" class="form-control" id="username"
-                                                placeholder="Enter username">
+                                            <input required name="username" type="text" class="form-control"
+                                                id="username" placeholder="Enter username">
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label for="useremail">Email</label>
                                         <div class="input-group mb-3">
-                                            <span class="auth-form-icon" style="background-color: black">
-                                                <i class="dripicons-lock"></i>
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-envelope"></i>
                                             </span>
-                                            <input autocomplete="off" style="background-color: black" type="password"
-                                                name="password" class="form-control" id="password"
-                                                placeholder="Enter password">
+                                            <input required name="email" type="email" class="form-control" id="email"
+                                                placeholder="Enter Email">
                                         </div>
                                     </div>
-                                    <div class="form-group row mt-4">
-                                        <div class="col-sm-6">
-                                            <div class="custom-control custom-switch switch-success">
-                                                <input type="checkbox" class="custom-control-input"
-                                                    id="customSwitchSuccess">
-                                                <label class="custom-control-label text-muted"
-                                                    for="customSwitchSuccess">Remember me</label>
-                                            </div>
+                                    <div class="form-group">
+                                        <label for="userpassword">Password</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-lock"></i>
+                                            </span>
+                                            <input required name="password" type="password" class="form-control"
+                                                id="password" placeholder="Enter password">
                                         </div>
-                                        <div class="col-sm-6 text-right">
-                                            <a href="javascript:void();" class="text-muted font-13"><i
-                                                    class="dripicons-lock"></i> Forgot password?</a>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="usertelegram">Telegram</label>
+                                        <div class="input-group mb-3">
+                                            <span class="auth-form-icon">
+                                                <i class="fa-solid fa-lock"></i>
+                                            </span>
+                                            <input name="telegram" type="text" class="form-control" id="telegram"
+                                                placeholder="Telegram Username (Optional)">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -294,51 +84,46 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="form-group mb-0 row">
-                                        <div class="col-12 mt-2">
-                                            <button id="submit" type="submit"
-                                                style="background: #1a4f1a;text-shadow: 0px 0px 10px #54FE55;box-shadow: 0px 0px 10px #c0f060;"
-                                                class="btn btn-secondary btn-round btn-block">Log In <i
-                                                    class="fas fa-sign-in-alt ml-1"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
-                            <div class="m-3 text-center text-muted">
-                                <p class>Don't have an account ? <a href="/register"
-                                        class="text-success ml-3">Register</a></p>
+                            <div class="form-group mb-0 row">
+                                <div class="col-12 mt-2">
+                                    <button id="submit"
+                                        class="btn btn-primary btn-round btn-block waves-effect waves-light"
+                                        type="submit">Register <i class="fas fa-sign-in-alt ml-1"
+                                            aria-hidden="true"></i></button>
+                                </div>
                             </div>
+                            </form>
+                        </div>
+                        <div class="m-3 text-center text-muted">
+                            <p class="">Already have an account ? <a href="/login" class="text-primary ml-2">Log
+                                    in</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
-    <script src="public/js/mouse.js"></script>
-    <script src="public/js/jquery.min.js"></script>
-    <script src="public/js/bootstrap.bundle.min.js"></script>
-    <script src="public/js/metisMenu.min.js"></script>
-    <script src="public/js/waves.min.js"></script>
-    <script src="public/js/jquery.slimscroll.min.js"></script>
-
-    <script src="public/js/sweetalert2.min.js"></script>
     <script>
-
         const submit = document.getElementById("submit")
-        const fetchFunction = async (e) => {
-            e.preventDefault();
-            const username = document.getElementById("username")
-            const password = document.getElementById("password")
 
-            if (username && password) {
+        async function register(e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+            const telegram = document.getElementById("telegram").value;
+            if (username && password && email) {
                 const data = {
-                    username: username.value,
-                    password: password.value
+                    username: username,
+                    password: password,
+                    email: email,
+                    telegram: telegram
                 }
 
-                const response = await fetch("https://hgn-store-cn6y.onrender.com/user/get", {
+                const response = await fetch("https://hgn-store-cn6y.onrender.com/user/create", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -346,23 +131,44 @@
                     body: JSON.stringify(data),
                 });
                 const result = await response.json();
-                console.log(result)
                 if (result.Auth === "Success") {
-                    window.location.href = "/home";
+                    window.location.href = "/login";
 
                 } else {
-                    alert("Username or password Incorrect")
+                    alert("Error while Registering")
                     window.location.reload()
                 }
             } else {
-                alert("Enter Username and password!")
+                alert("Fill in all the details!")
                 window.location.reload()
             }
+
+
         }
-        submit.addEventListener("click", fetchFunction)
+        submit.addEventListener("click", register)
+
     </script>
 
-    <script src="public/js/app.js"></script>
+    <script src="public/Register%20-%20HGN_files/app.js"></script>
+
+    <div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(215, 215, 215); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px; border-radius: 4px; left: auto; top: -10000px; z-index: -2147483648; position: absolute; transition: opacity 0.15s ease-out 0s; opacity: 0; visibility: hidden;"
+        aria-hidden="true">
+        <div style="position: relative; z-index: 1;"><iframe src="public/Register%20-%20HGN_files/hcaptcha_002.html"
+                scrolling="no" title="Main content of the hCaptcha challenge"
+                style="border: 0px none; z-index: 2000000000; position: relative;" frameborder="0"></iframe></div>
+        <div
+            style="width: 100%; height: 100%; position: fixed; pointer-events: none; top: 0px; left: 0px; z-index: 0; background-color: rgb(255, 255, 255); opacity: 0.05;">
+        </div>
+        <div
+            style="border-width: 11px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 1; right: 100%;">
+            <div
+                style="border-width: 10px; border-style: solid; border-color: transparent rgb(255, 255, 255) transparent transparent; position: relative; top: 10px; z-index: 1;">
+            </div>
+            <div
+                style="border-width: 11px; border-style: solid; border-color: transparent rgb(215, 215, 215) transparent transparent; position: relative; top: -11px; z-index: 0;">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
